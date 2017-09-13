@@ -9,10 +9,9 @@ class MY_Loader extends MX_Loader {
 
     function front_render($template_name, $vars = array(), $page_script = '') {
 
-        $this->view('front_includes/front_header', $vars);
+        $this->view('frontend_include/header', $vars);
         $this->view($template_name, $vars);
-        $this->view('front_includes/front_footer', $vars);
-        $this->view('front_includes/common_script', $vars);
+        $this->view('frontend_include/footer', $vars);
         if (!empty($page_script)):
             $this->view($page_script, $vars);
         endif;
@@ -28,4 +27,5 @@ class MY_Loader extends MX_Loader {
             $this->view($page_script, $vars);
         endif;
     }
+    
 }
