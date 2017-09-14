@@ -1,4 +1,7 @@
-    <!--Main container sec start-->
+<style>
+     .error {color:red;}
+</style>   
+<!--Main container sec start-->
     <div class="main_container">
       <section class="innerpage_banner">
         <img src="<?php echo base_url(); ?>frontend_asset/images/about_banner.jpg" class="img-responsive">
@@ -29,36 +32,34 @@
                   <h2> Get In Touch </h2>
                 </div>
                 <div class="contact_form">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                  <form class="">
+                  <p>FILL BELOW FORM FOR CALL BACK</p>
+                  <div class="text-success"><?php echo $this->session->flashdata('success');?></div>
+                  <br>
+                  <form class="" action="<?php echo base_url().'contact-us';?>" method="post">
                     <div class="row">
                       <div class="col-sm-6">
                       <div class="form-group">
-                        <label class="sr-only" for="First Name">First Name</label>
-                        <input type="text" class="form-control" placeholder="First Name">
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <label class="sr-only" for="Last Name">Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name">
+                        <label class="sr-only" for="First Name">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Full Name" name="name" value="<?php echo set_value('name');?>">
+                        <?php echo form_error('name');?>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label class="sr-only" for="Email Address">Email Address</label>
-                        <input type="email" class="form-control" placeholder="Email Address">
+                        <input type="email" class="form-control" placeholder="Email Address" name="email" value="<?php echo set_value('email');?>">
+                        <?php echo form_error('email');?>
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label class="sr-only" for="Phone">Phone</label>
-                        <input type="text" class="form-control" placeholder="Phone">
+                        <label class="sr-only" for="Subject">Subject</label>
+                        <input type="text" class="form-control" placeholder="Subject" name="subject" value="<?php echo set_value('subject');?>">
                       </div>
                     </div>
                     <div class="col-sm-12">
                       <div class="form-group">
-                        <textarea class="form-control" rows="3"></textarea>
+                          <textarea class="form-control" rows="3" placeholder="Message" name="message"><?php echo set_value('message');?></textarea>
                       </div>
                     </div>
                     <div class="form-group">
@@ -75,16 +76,13 @@
                   <h2> Office Address </h2>
                 </div>
                 <div class="off_address">
-                  <p class="pera_bottom_20">751 W. Fourth Street Suite 400, Winston-Salem, NC 27101</p>
-                  <p class="pera_bottom_20">Phone:  336-760-9331</p>
+                  <p class="pera_bottom_20">380 Shrinagar Extension Indore</p>
+                  <p class="pera_bottom_20">Phone:  0731-00023656</p>
                 </div>
                 <hr>
               </div>
             </div>
         </div>
-      </section>
-      <section class="innerpage_banner">
-        <img src="<?php echo base_url(); ?>frontend_asset/images/map.jpg" alt="map" class="img-responsive">
       </section>
     </div>
     <!--Main container sec end-->

@@ -6,48 +6,35 @@
                 <div class="ftr_block">
                     <h4>Corporate Headquarters</h4>
                     <ul class="ftr_address">
-                        <li> <i class="fa fa-map-marker"></i> 751 W. Fourth Street Suite 400, Winston-Salem, NC 27101</li>
-                        <li> <i class="fa fa-phone"></i> 336-760-9331</li>
-                        <li> <i class="fa fa-envelope"></i> Info@acadvisors.com</li>
+                        <li> <i class="fa fa-map-marker"></i> 380 Shrinagar Extension Indore</li>
+                        <li> <i class="fa fa-phone"></i> 0731-00023656</li>
+                        <li> <i class="fa fa-envelope"></i> eqresearchpanel@gmail.com</li>
                     </ul>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="ftr_block">
-                    <h4>Investors</h4>
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="#">Why Invest</a></li>
-                        <li><a href="#">Company Overview</a></li>
-                        <li><a href="#">Stock Information</a></li>
-                        <li><a href="#">Financial Reports & Filings</a></li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Corporate Governance</a></li>
+                        <li><a href="<?php echo base_url().'pricing';?>">Pricing</a></li>
+                        <li><a href="<?php echo base_url().'payment';?>">Payment</a></li>
+                        <li><a href="<?php echo base_url().'report';?>">Report & Tracksheet</a></li>
+                        <li><a href="<?php echo base_url().'free-trial';?>">free trail</a></li>
+                        <li><a href="<?php echo base_url().'about-us';?>">About Us</a></li>
+                        <li><a href="<?php echo base_url().'contact-us';?>">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-sm-3">
+             <div class="col-sm-3">
                 <div class="ftr_block">
-                    <h4>Investors</h4>
+                    <h4>Services</h4>
                     <ul>
-                        <li><a href="#">Why Invest</a></li>
-                        <li><a href="#">Company Overview</a></li>
-                        <li><a href="#">Stock Information</a></li>
-                        <li><a href="#">Financial Reports & Filings</a></li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Corporate Governance</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="ftr_block">
-                    <h4>Investors</h4>
-                    <ul>
-                        <li><a href="#">Why Invest</a></li>
-                        <li><a href="#">Company Overview</a></li>
-                        <li><a href="#">Stock Information</a></li>
-                        <li><a href="#">Financial Reports & Filings</a></li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">Corporate Governance</a></li>
+                        <li><a href="future-option">Future Option</a></li>
+                        <li><a href="#">BTST/STBT</a></li>
+                        <li><a href="#">Cash</a></li>
+                        <li><a href="#">Future</a></li>
+                        <li><a href="#">Option</a></li>
+                        <li><a href="#">MCX</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,11 +50,8 @@
                             <img src="<?php echo base_url(); ?>frontend_asset/images/ftr_logo.png" class="img-responsive">
                         </div>
                         <div class="copy_ftr_link">
-                            <p>© Copyright 2017 Atlantic Capital Advisors, Inc.</p>
-                            <ul>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms & Conditions</a></li>
-                            </ul>
+                            <p>© Copyright 2017 Equity Research</p>
+                           
                         </div>
                     </div>
                 </div>

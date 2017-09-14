@@ -30,7 +30,31 @@ class Home extends Common_Controller {
     public function contactUs() {
         $this->data['parent'] = "Equity Reasearch";
         $this->data['title'] = "Equity Reasearch";
-        $this->load->front_render('contact_us');
+        if(isset($_POST) && !empty($_POST)){
+            $this->form_validation->set_rules('name', 'Full Name', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required');
+            if ($this->form_validation->run() == false) {
+                $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+                 $this->load->front_render('contact_us'); 
+            }else{
+                   $options_data = array(
+                       
+                        'name'       => $this->input->post('name'),
+                        'email'      => $this->input->post('email'),
+                        'subject'    => $this->input->post('subject'),
+                        'message'    => $this->input->post('message')
+                    );
+                    $option = array('table' => 'contact', 'data' => $options_data);
+                    if ($this->common_model->customInsert($option)) {
+                       $this->session->set_flashdata('success','Thank you for your message,we will contact you soon.');
+                       redirect('contact-us');
+                    }
+                     redirect('contact-us');
+            }
+        }else{
+           $this->load->front_render('contact_us'); 
+        }
+        
     }
     
     public function leadership() {

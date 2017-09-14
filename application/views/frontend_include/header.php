@@ -25,7 +25,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-              <div class="header_contact">
+<!--              <div class="header_contact">
                 <ul>
                   <li><a href="#"><i class="fa fa-phone"></i> 123-456-7890</a></li>
                   <li><a href="#"><i class="fa fa-envelope"></i> info@atlanticcapital.com</a></li>
@@ -36,7 +36,7 @@
                   <li><a href="#" class="fa fa-linkedin"></a></li>
                   <li><a href="#" class="fa fa-pinterest"></a></li>
                 </ul>
-              </div>
+              </div>-->
               <nav class="navbar navbar-default">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -57,33 +57,23 @@
                   
                   <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="<?php echo base_url();?>">Home</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service <i class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="future-option">Future Option</a></li>
+                        <li><a href="#">BTST/STBT</a></li>
+                        <li><a href="#">Cash</a></li>
+                        <li><a href="#">Future</a></li>
+                        <li><a href="#">Option</a></li>
+                        <li><a href="#">MCX</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="<?php echo base_url().'pricing';?>">Pricing</a></li>
+                    <li><a href="<?php echo base_url().'payment';?>">Payment</a></li>
+                    <li><a href="<?php echo base_url().'report';?>">Report & Tracksheet</a></li>
+                    <li><a href="<?php echo base_url().'free-trial';?>">free trail</a></li>
                     <li><a href="<?php echo base_url().'about-us';?>">About Us</a></li>
                     <li><a href="<?php echo base_url().'contact-us';?>">Contact Us</a></li>
-                    <li><a href="<?php echo base_url().'leadership';?>">Leadership</a></li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">What We Do <i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">submenu 1</a></li>
-                        <li><a href="#">submenu 2</a></li>
-                        <li><a href="#">submenu 3</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">submenu 1</a></li>
-                        <li><a href="#">submenu 2</a></li>
-                        <li><a href="#">submenu 3</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Commentary <i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">submenu 1</a></li>
-                        <li><a href="#">submenu 2</a></li>
-                        <li><a href="#">submenu 3</a></li>
-                      </ul>
-                    </li>
                   </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
