@@ -95,6 +95,11 @@ class Home extends Common_Controller {
         $this->load->front_render('btst_stbt');
     }
 
+    public function pricing(){
+          $this->data['parent'] = "Equity Reasearch";
+        $this->data['title'] = "Equity Reasearch";
+        $this->load->front_render('pricing');
+    }
 
 
     public function freetrials() {
