@@ -62,13 +62,13 @@ h1,h2,h3,h4,h5,h6{
 /*****************************************************************************
 ***************************css for header sec start***************************
 ******************************************************************************/
-.header_main{
-  background: #fff;
-  border-top: 4px solid #00b63e;
-  position: relative;
-  z-index: 99;
-  height: 104px;
-  }
+.header_main {
+    background: #fff none repeat scroll 0 0;
+    border-top: 4px solid #eb772a;
+    height: 104px;
+    position: relative;
+    z-index: 99;
+}
 .header_main , 
 .header_contact , 
 .header_main .navbar-right , 
@@ -93,7 +93,6 @@ h1,h2,h3,h4,h5,h6{
   padding: 0px;
 }
 .header_main .navbar-brand {
-  background: #fff !important;
   display: inline;
   height: auto;
   padding: 20px;
@@ -112,19 +111,14 @@ h1,h2,h3,h4,h5,h6{
   text-transform: uppercase;
   border-bottom: 3px solid transparent;
 }
-.header_main .navbar-nav > li > a:hover{
-  color: #00b63e;
+.header_main .navbar-nav > li > a:hover {
+    color: #eb772a;
 }
-.header_main  .navbar-default .navbar-nav > .active > a, 
-.header_main  .navbar-default .navbar-nav > .active > a:focus, 
-.header_main  .navbar-default .navbar-nav > .active > a:hover,
-.header_main  .navbar-default .navbar-nav > .open > a, 
-.header_main  .navbar-default .navbar-nav > .open > a:focus, 
-.header_main  .navbar-default .navbar-nav > .open > a:hover{
-  background: none;
-  color: #00b63e;
-  border-bottom: 3px solid #00b63e;
-}
+.header_main .navbar-default .navbar-nav > .active > a, .header_main .navbar-default .navbar-nav > .active > a:focus, .header_main .navbar-default .navbar-nav > .active > a:hover, .header_main .navbar-default .navbar-nav > .open > a, .header_main .navbar-default .navbar-nav > .open > a:focus, .header_main .navbar-default .navbar-nav > .open > a:hover {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border-bottom: 3px solid #eb772a;
+    color: #eb772a;
+} 
 .header_main  .dropdown-menu{border: none;}
 .header_main .navbar-right{margin-top: 40px;}
 .header_contact {
@@ -889,9 +883,9 @@ background: none !important;
   resize: none;
   border-radius: 20px;
 }
-.green_bg{
-  background: #009874;
-  font-weight: 400;
+.green_bg {
+    background: #eb772a none repeat scroll 0 0;
+    font-weight: 400;
 }
 input.form-control::-webkit-input-placeholder{color: #494949;}
 input.form-control::-moz-placeholder{color: #494949;opacity: 1;}

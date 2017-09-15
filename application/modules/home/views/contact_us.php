@@ -53,6 +53,13 @@
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
+                        <label class="sr-only" for="Mobile">Mobile</label>
+                        <input type="text" class="form-control" placeholder="Mobile" name="mobile" value="<?php echo set_value('mobile');?>">
+                        <?php echo form_error('mobile');?>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
                         <label class="sr-only" for="Subject">Subject</label>
                         <input type="text" class="form-control" placeholder="Subject" name="subject" value="<?php echo set_value('subject');?>">
                       </div>

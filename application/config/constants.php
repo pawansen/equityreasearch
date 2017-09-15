@@ -99,7 +99,7 @@ switch ($_SERVER['SERVER_NAME']) {
         define('MW_DB_HOST', 'localhost');
         define('MW_DB_USERNAME', 'root');
         define('MW_DB_PASSWORD', 'root');
-        define('MW_DB_DATABASE_NAME', 'mobi96_self_assessment');
+        define('MW_DB_DATABASE_NAME', 'property_management');
         $host     = $_SERVER['HTTP_HOST'] . "/equityreasearch/";
 }
 define('DIRECTOR_ROLE', 2);

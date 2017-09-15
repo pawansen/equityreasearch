@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                   </button>
                   <a class="navbar-brand" href="<?php echo base_url();?>">
-                    <img src="<?php echo base_url(); ?>frontend_asset/images/logo.png" class="img-responsive">
+                    <img src="<?php echo base_url(); ?>frontend_asset/images/eq.png" class="img-responsive">
                   </a>
                 </div>
 
@@ -71,7 +71,7 @@
                     <li><a href="<?php echo base_url().'pricing';?>">Pricing</a></li>
                     <li><a href="<?php echo base_url().'payment';?>">Payment</a></li>
                     <li><a href="<?php echo base_url().'report';?>">Report & Tracksheet</a></li>
-                    <li><a href="<?php echo base_url().'free-trial';?>">free trail</a></li>
+                    <li><a href="#free-trial" data-toggle="modal" data-target="#free-trial">free trail</a></li>
                     <li><a href="<?php echo base_url().'about-us';?>">About Us</a></li>
                     <li><a href="<?php echo base_url().'contact-us';?>">Contact Us</a></li>
                   </ul>
