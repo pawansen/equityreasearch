@@ -60,12 +60,12 @@
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Service <i class="fa fa-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="future-option">Future Option</a></li>
-                        <li><a href="#">BTST/STBT</a></li>
-                        <li><a href="#">Cash</a></li>
-                        <li><a href="#">Future</a></li>
-                        <li><a href="#">Option</a></li>
-                        <li><a href="#">MCX</a></li>
+                        <li><a href="index-future-option">Index Future Option</a></li>
+                        <li><a href="btst-stbt">BTST/STBT</a></li>
+                        <li><a href="cash">Cash</a></li>
+                        <li><a href="future">Future</a></li>
+                        <li><a href="option">Option</a></li>
+                        <li><a href="mcx">MCX</a></li>
                       </ul>
                     </li>
                     <li><a href="<?php echo base_url().'pricing';?>">Pricing</a></li>

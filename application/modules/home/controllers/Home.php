@@ -59,11 +59,43 @@ class Home extends Common_Controller {
         }
     }
 
-    public function leadership() {
-        $this->data['parent'] = "Equity Reasearch";
+    public function cash(){
+          $this->data['parent'] = "Equity Reasearch";
         $this->data['title'] = "Equity Reasearch";
-        $this->load->front_render('leadership');
+        $this->load->front_render('cash');
     }
+
+     public function future(){
+          $this->data['parent'] = "Equity Reasearch";
+        $this->data['title'] = "Equity Reasearch";
+        $this->load->front_render('future');
+    }
+
+     public function mcx(){
+          $this->data['parent'] = "Equity Reasearch";
+        $this->data['title'] = "Equity Reasearch";
+        $this->load->front_render('mcx');
+    }
+
+     public function indexfutureoption(){
+          $this->data['parent'] = "Equity Reasearch";
+        $this->data['title'] = "Equity Reasearch";
+        $this->load->front_render('index_future_option');
+    }
+
+     public function option(){
+          $this->data['parent'] = "Equity Reasearch";
+        $this->data['title'] = "Equity Reasearch";
+        $this->load->front_render('option');
+    }
+
+    public function btststbt(){
+          $this->data['parent'] = "Equity Reasearch";
+        $this->data['title'] = "Equity Reasearch";
+        $this->load->front_render('btst_stbt');
+    }
+
+
 
     public function freetrials() {
         $this->form_validation->set_rules('names', 'Full Name', 'required');

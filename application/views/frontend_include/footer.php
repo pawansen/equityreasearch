@@ -19,7 +19,7 @@
                         <li><a href="<?php echo base_url() . 'pricing'; ?>">Pricing</a></li>
                         <li><a href="<?php echo base_url() . 'payment'; ?>">Payment</a></li>
                         <li><a href="<?php echo base_url() . 'report'; ?>">Report & Tracksheet</a></li>
-                        <li><a href="#free-trial" data-toggle="modal" data-target="#free-trial">free trail</a></li>
+                        <li><a href="#free-trial" data-toggle="modal" data-target="#free-trial">Free trail</a></li>
                         <li><a href="<?php echo base_url() . 'about-us'; ?>">About Us</a></li>
                         <li><a href="<?php echo base_url() . 'contact-us'; ?>">Contact Us</a></li>
                     </ul>
@@ -29,12 +29,12 @@
                 <div class="ftr_block">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="future-option">Future Option</a></li>
-                        <li><a href="#">BTST/STBT</a></li>
-                        <li><a href="#">Cash</a></li>
-                        <li><a href="#">Future</a></li>
-                        <li><a href="#">Option</a></li>
-                        <li><a href="#">MCX</a></li>
+                        <li><a href="index-future-option">Index Future Option</a></li>
+                        <li><a href="btst-stbt">BTST/STBT</a></li>
+                        <li><a href="cash">Cash</a></li>
+                        <li><a href="future">Future</a></li>
+                        <li><a href="option">Option</a></li>
+                        <li><a href="mcx">MCX</a></li>
                     </ul>
                 </div>
             </div>
