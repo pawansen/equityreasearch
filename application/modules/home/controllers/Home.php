@@ -129,4 +129,115 @@ class Home extends Common_Controller {
         echo json_encode($response);
     }
 
+    public function buy_now(){
+
+        $this->load->view ( 'pay' );
+    }
+
+        /**
+     * **************Secure Buy Package method*************
+     */
+    public function secureCheckOut() {
+            $aid = base64_decode ( base64_decode ( $this->uri->segment ( 3 ) ) );
+            $data ['package'] = $this->package_model->getPackage ( array (
+                    'aid' => $aid 
+            ) );
+            $data ['user'] = $this->authentication_model->getUser ( array (
+                    'emp_id' => $this->authentication_model->isEMpId () 
+            ) );
+            $data ['userInfo'] = $this->userdetail_model->getDetail ( array (
+                    'emp_id' => $this->authentication_model->isEMpId () 
+            ) );
+            $this->load->view ( 'user/pay_money_checkout', $data );
+    }
+    /**
+     * **************Secure Buy Package transaction success method*************
+     */
+    public function paySuccess() {
+        $status = $_POST ["status"];
+        $firstname = $_POST ["firstname"];
+        $amount = $_POST ["amount"];
+        $txnid = $_POST ["txnid"];
+        $posted_hash = $_POST ["hash"];
+        $key = $_POST ["key"];
+        $productinfo = $_POST ["productinfo"];
+        $email = $_POST ["email"];
+        $salt = "GQs7yium";
+        
+        If (isset ( $_POST ["additionalCharges"] )) {
+            $additionalCharges = $_POST ["additionalCharges"];
+            $retHashSeq = $additionalCharges . '|' . $salt . '|' . $status . '|||||||||||' . $email . '|' . $firstname . '|' . $productinfo . '|' . $amount . '|' . $txnid . '|' . $key;
+        } else {
+            
+            $retHashSeq = $salt . '|' . $status . '|||||||||||' . $email . '|' . $firstname . '|' . $productinfo . '|' . $amount . '|' . $txnid . '|' . $key;
+        }
+        $hash = hash ( "sha512", $retHashSeq );
+        
+        if ($hash != $posted_hash) {
+            $this->session->set_flashdata ( 'error', 'Invalid Transaction. Please try again' );
+            redirect ( 'home/myPackages' );
+        } else {
+            
+            $package = $this->package_model->getPackage ( array (
+                    'aid' => $productinfo 
+            ) );
+            $soldId = strtolower ( $package ['0']->plan_name ) . rand ( 0, 999999 );
+            $sold = array (
+                    'emp_id' => $this->authentication_model->isEMpId (),
+                    'emp_code' => $this->authentication_model->isUserId (),
+                    'txnid' => $txnid,
+                    'hash_key' => $key,
+                    'plan_name' => $package ['0']->plan_name,
+                    'package_sold_id' => $soldId,
+                    'package_aid' => $package ['0']->aid,
+                    'price' => $package ['0']->price,
+                    'plan_periods_month' => $package ['0']->plan_periods_month,
+                    'buy_date' => standard_date ( 'DATE_MYSQL', time () ),
+                    'status' => 1,
+                    'active' => 1,
+                    'create_date' => standard_date ( 'DATE_MYSQL', time () ) 
+            );
+            if ($this->package_model->setPackageSold ( $sold )) {
+                $this->session->set_flashdata ( 'message', 'Conguratilation Your Package Successfully Buyer ! Thank You' );
+                redirect ( 'home/myPackages' );
+            } else {
+                $this->session->set_flashdata ( 'error', 'Failed Buy! Please Try again' );
+                redirect ( 'home/myPackages' );
+            }
+        }
+    }
+    /**
+     * **************Secure Buy Package transaction failed method*************
+     */
+    public function payFailed() {
+        $status = $_POST ["status"];
+        $firstname = $_POST ["firstname"];
+        $amount = $_POST ["amount"];
+        $txnid = $_POST ["txnid"];
+        
+        $posted_hash = $_POST ["hash"];
+        $key = $_POST ["key"];
+        $productinfo = $_POST ["productinfo"];
+        $email = $_POST ["email"];
+        $salt = "GQs7yium";
+        
+        If (isset ( $_POST ["additionalCharges"] )) {
+            $additionalCharges = $_POST ["additionalCharges"];
+            $retHashSeq = $additionalCharges . '|' . $salt . '|' . $status . '|||||||||||' . $email . '|' . $firstname . '|' . $productinfo . '|' . $amount . '|' . $txnid . '|' . $key;
+        } else {
+            
+            $retHashSeq = $salt . '|' . $status . '|||||||||||' . $email . '|' . $firstname . '|' . $productinfo . '|' . $amount . '|' . $txnid . '|' . $key;
+        }
+        $hash = hash ( "sha512", $retHashSeq );
+        
+        if ($hash != $posted_hash) {
+            $this->session->set_flashdata ( 'error', 'Invalid Transaction. Please try again' );
+            // redirect ( 'home/myPackages' );
+        } else {
+            
+            $this->session->set_flashdata ( 'error', "Your order status is " . $status . "" );
+            redirect ( 'home/myPackages' );
+        }
+    }
+
 }
