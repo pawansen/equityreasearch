@@ -98,8 +98,8 @@ switch ($_SERVER['SERVER_NAME']) {
     default:
         define('MW_DB_HOST', 'localhost');
         define('MW_DB_USERNAME', 'root');
-        define('MW_DB_PASSWORD', 'root');
-        define('MW_DB_DATABASE_NAME', 'property_management');
+        define('MW_DB_PASSWORD', '');
+        define('MW_DB_DATABASE_NAME', 'eqreasearchpanel');
         $host     = $_SERVER['HTTP_HOST'] . "/equityreasearch/";
 }
 define('DIRECTOR_ROLE', 2);

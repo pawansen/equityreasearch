@@ -69,7 +69,7 @@
                       </ul>
                     </li>
                     <li><a href="<?php echo base_url().'pricing';?>">Pricing</a></li>
-                    <li><a href="<?php echo base_url().'payment';?>">Payment</a></li>
+                    <li><a href="<?php echo base_url().'buy-now';?>">Payment</a></li>
                     <li><a href="<?php echo base_url().'report';?>">Report & Tracksheet</a></li>
                     <li><a href="#free-trial" data-toggle="modal" data-target="#free-trial">free trail</a></li>
                     <li><a href="<?php echo base_url().'about-us';?>">About Us</a></li>

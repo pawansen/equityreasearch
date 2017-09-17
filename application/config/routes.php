@@ -60,5 +60,6 @@ $route['mcx'] = 'home/mcx';
 $route['option'] = 'home/option';
 $route['btst-stbt'] = 'home/btststbt';
 $route['pricing'] = 'home/pricing';
+$route['buy-now'] = 'home/buy_now';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

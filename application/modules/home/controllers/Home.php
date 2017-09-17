@@ -100,8 +100,7 @@ class Home extends Common_Controller {
         $this->data['title'] = "Equity Reasearch";
         $this->load->front_render('pricing');
     }
-
-
+    
     public function freetrials() {
         $this->form_validation->set_rules('names', 'Full Name', 'required');
         $this->form_validation->set_rules('emails', 'Email', 'required');
@@ -130,25 +129,7 @@ class Home extends Common_Controller {
     }
 
     public function buy_now(){
-
-        $this->load->view ( 'pay' );
-    }
-
-        /**
-     * **************Secure Buy Package method*************
-     */
-    public function secureCheckOut() {
-            $aid = base64_decode ( base64_decode ( $this->uri->segment ( 3 ) ) );
-            $data ['package'] = $this->package_model->getPackage ( array (
-                    'aid' => $aid 
-            ) );
-            $data ['user'] = $this->authentication_model->getUser ( array (
-                    'emp_id' => $this->authentication_model->isEMpId () 
-            ) );
-            $data ['userInfo'] = $this->userdetail_model->getDetail ( array (
-                    'emp_id' => $this->authentication_model->isEMpId () 
-            ) );
-            $this->load->view ( 'user/pay_money_checkout', $data );
+        $this->load->front_render('payment');
     }
     /**
      * **************Secure Buy Package transaction success method*************
@@ -162,7 +143,8 @@ class Home extends Common_Controller {
         $key = $_POST ["key"];
         $productinfo = $_POST ["productinfo"];
         $email = $_POST ["email"];
-        $salt = "GQs7yium";
+        $phone = $_POST ["phone"];
+        $salt = "3bEsI15gjM";
         
         If (isset ( $_POST ["additionalCharges"] )) {
             $additionalCharges = $_POST ["additionalCharges"];
@@ -182,27 +164,23 @@ class Home extends Common_Controller {
                     'aid' => $productinfo 
             ) );
             $soldId = strtolower ( $package ['0']->plan_name ) . rand ( 0, 999999 );
-            $sold = array (
-                    'emp_id' => $this->authentication_model->isEMpId (),
-                    'emp_code' => $this->authentication_model->isUserId (),
+            $options_data = array (
+                    'name' => $firstname,
+                    'email' => $email,
+                    'phone' => $phone,
                     'txnid' => $txnid,
                     'hash_key' => $key,
-                    'plan_name' => $package ['0']->plan_name,
-                    'package_sold_id' => $soldId,
-                    'package_aid' => $package ['0']->aid,
                     'price' => $package ['0']->price,
-                    'plan_periods_month' => $package ['0']->plan_periods_month,
-                    'buy_date' => standard_date ( 'DATE_MYSQL', time () ),
-                    'status' => 1,
-                    'active' => 1,
-                    'create_date' => standard_date ( 'DATE_MYSQL', time () ) 
+                    'buy_date' => date('Y-m-d H:i:s'),
+                    'create_date' => date('Y-m-d H:i:s'),
             );
-            if ($this->package_model->setPackageSold ( $sold )) {
-                $this->session->set_flashdata ( 'message', 'Conguratilation Your Package Successfully Buyer ! Thank You' );
-                redirect ( 'home/myPackages' );
+            $option = array('table' => 'payment', 'data' => $options_data);
+            if ($this->common_model->customInsert ( $option )) {
+                $this->session->set_flashdata ( 'success', 'Conguratilation Your Package Successfully Buyer ! Thank You' );
+                redirect ( 'pricing' );
             } else {
                 $this->session->set_flashdata ( 'error', 'Failed Buy! Please Try again' );
-                redirect ( 'home/myPackages' );
+                redirect ( 'pricing' );
             }
         }
     }
@@ -219,7 +197,7 @@ class Home extends Common_Controller {
         $key = $_POST ["key"];
         $productinfo = $_POST ["productinfo"];
         $email = $_POST ["email"];
-        $salt = "GQs7yium";
+        $salt = "3bEsI15gjM";
         
         If (isset ( $_POST ["additionalCharges"] )) {
             $additionalCharges = $_POST ["additionalCharges"];
@@ -232,11 +210,11 @@ class Home extends Common_Controller {
         
         if ($hash != $posted_hash) {
             $this->session->set_flashdata ( 'error', 'Invalid Transaction. Please try again' );
-            // redirect ( 'home/myPackages' );
+            redirect ( 'pricing' );
         } else {
             
             $this->session->set_flashdata ( 'error', "Your order status is " . $status . "" );
-            redirect ( 'home/myPackages' );
+            redirect ( 'pricing' );
         }
     }
 

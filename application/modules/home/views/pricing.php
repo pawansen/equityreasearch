@@ -72,7 +72,8 @@
                 <div class="col-md-12 col-sm-8">
                     <!--              <div class="since_text">Since 2007</div>-->
                     <div class="head_commen">
-                        <!--         <h2>Our Company History</h2> -->
+                        <div class="text-success"><?php echo $this->session->flashdata('success');?></div>
+                        <div class="text-danger"><?php echo $this->session->flashdata('error');?></div>
                     </div>
 
                     <div class="entry-content">
@@ -117,7 +118,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 60,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a target="_blank" href="http://capitalvraddhi.com/payment/" class="btn btn-warning">Pay Now</a></td>
+                                            <td colspan="2"><a target="_blank" href="<?php echo base_url().'buy-now';?>" class="btn btn-warning">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -161,7 +162,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 70,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="http://capitalvraddhi.com/payment/">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -205,7 +206,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 60,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="http://capitalvraddhi.com/payment/">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -249,7 +250,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 70,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="http://capitalvraddhi.com/payment/">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -293,7 +294,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 70,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="http://capitalvraddhi.com/payment/">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -337,7 +338,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 90,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="http://capitalvraddhi.com/payment/">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -381,7 +382,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 70,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="http://capitalvraddhi.com/payment/">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -425,7 +426,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 99,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="http://capitalvraddhi.com/payment/">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -469,7 +470,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 70,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="http://capitalvraddhi.com/payment/">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -513,7 +514,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 120,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="http://capitalvraddhi.com/payment/">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -557,7 +558,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 150,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="http://capitalvraddhi.com/payment/">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -601,7 +602,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 399,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="http://capitalvraddhi.com/payment/">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
