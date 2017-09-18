@@ -78,13 +78,14 @@
                   </form>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-4">
                 <div class="head_commen">
                   <h2> Office Address </h2>
                 </div>
                 <div class="off_address">
-                  <p class="pera_bottom_20">380 Shrinagar Extension Indore</p>
-                  <p class="pera_bottom_20">Phone:  0731-00023656</p>
+                  <p class="pera_bottom_20"><?php echo ADDRESS;?></p>
+                  <p class="pera_bottom_20">Phone:  <?php echo PHONE;?></p>
+                   <p class="pera_bottom_20">Email:  <?php echo SUPPORT_EMAIL;?></p>
                 </div>
                 <hr>
               </div>

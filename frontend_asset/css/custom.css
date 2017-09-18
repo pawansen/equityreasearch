@@ -869,7 +869,6 @@ background: none !important;
   box-shadow: none;
 }
 .contact_form .form-control{
-  border-radius:50px;
   border-color:#e5e5e5;
   box-shadow: none;
   height: 46px;
@@ -881,7 +880,7 @@ background: none !important;
 .contact_form textarea.form-control{
   height: 79px;
   resize: none;
-  border-radius: 20px;
+  border-radius: 0px;
 }
 .green_bg {
     background: #eb772a none repeat scroll 0 0;

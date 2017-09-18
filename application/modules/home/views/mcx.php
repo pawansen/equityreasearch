@@ -29,10 +29,14 @@
               <div class="head_commen">
              <!--    <h2>Our Company History</h2> -->
               </div>
-              <p class="pera_bottom_20">Equity Research Panel is an Investment Advisory Company which provides tips and recommendations in Stock all Segment traded in NSE & BSE, and also provide in Commodities Segment. Our team consists of highly qualified analysts who are skilled and impeccable in their analysis. These analyst, using their experience and latest software tools, are able to predict the movements in share market on time and with high accuracy. As a result, using our tips, our clients gain the most out of the share market.</p>
-              <p class="pera_bottom_20"> 
-The overall business model created keeping in mind that can provide effective Research based advice to create a complete Investment solution platform of unlimited Trading & wealth creating opportunities. This platform combines certain and enables the investors to provide a wide variety of investment solutions to gain better returns.</p>
-
+              <p class="pera_bottom_20">In our MCX Tips services.we provide Rcommendations iN ALL counters bullion base metal and Energy. out of these 9 counter we select right counter among Gold, silver . crudeoil and base metals for the best intra day trade with good moment, Our research analyst uses very safe strategies for giving recommendations so our accuracy level is very high.</p>
+              <p class="pera_bottom_20 text-warning"> What you get</p>
+              <p class="pera_bottom_20"> Approx 3-4 calls per day.</p>
+              <p class="pera_bottom_20"> We also provide important market news.which is helpful for follow up and support.</p>
+              <p class="pera_bottom_20"> All this with 85-90 % of accuracy on calls in consistence basis.</p>
+              <p class="pera_bottom_20 text-warning"> Medium Of Calls</p>
+              <p class="pera_bottom_20">Calls will be provided by sms. </p>
+              <p class="pera_bottom_20"> All gsm and cdma networks are covered.</p>
             </div>
       
           </div>

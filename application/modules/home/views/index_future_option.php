@@ -33,14 +33,16 @@
 A trader can directly do trade on nifty to avoid the confusion of particular stock trend for intraday or positions,
   study world market trend and provide tips on major index NIFTY and BANKNIFTY in futures and options in this service.
 NIFTY Index is one of the most trading counter in equity market.</p>
-              <p class="pera_bottom_20"> In This Service you will get 3-4 calls in a day.</p>
+               <p class="pera_bottom_20 text-warning"> In This Service</p>
+              <p class="pera_bottom_20"> you will get 3-4 calls in a day.</p>
               <p class="pera_bottom_20"> Proper follow in every call.</p>
               <p class="pera_bottom_20"> Calls through technical levels & Fundamentals levels both.</p>
               <p class="pera_bottom_20"> Intraday Calls.</p>
               <p class="pera_bottom_20"> High Profit margins.</p>
               <p class="pera_bottom_20"> All this with 85-90 % of accuracy in calls on consistence basis.</p>
               <p class="pera_bottom_20"> Less risky calls.</p>
-              <p class="pera_bottom_20"> Medium Of Calls Calls would be delivered using sms on all GSM and CDMA cellphones.</p>
+              <p class="pera_bottom_20 text-warning"> Medium Of Calls</p>
+               <p class="pera_bottom_20"> Calls would be delivered using sms on all GSM and CDMA cellphones.</p>
             </div>
       
           </div>

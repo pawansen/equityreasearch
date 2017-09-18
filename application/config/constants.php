@@ -106,9 +106,9 @@ define('DIRECTOR_ROLE', 2);
 define('THEME_COLOR', 'success'); // success, primary, info
 define('THEME_BUTTON', 'btn btn-success');
 define('THEME', 'skin-1'); // skin-1, skin-2, skin-3
-define('FROM_EMAIL', 'support@site.com');
-define('SUPPORT_EMAIL', 'support@site.com');
-define('SITE_NAME', 'Equity Reasearch');
+define('FROM_EMAIL', 'eqresearchpanel@gmail.com');
+define('SUPPORT_EMAIL', 'eqresearchpanel@gmail.com');
+define('SITE_NAME', 'Equity Reasearch Panel');
 define('DEFAULT_USER_IMG', 'default-148.png');
 define('DEFAULT_USER_IMG_PATH', 'backend_asset/images/default-148.png');
 define('DEFAULT_NO_IMG', 'noimagefound.jpg');
@@ -119,10 +119,12 @@ define('ACTIVE_ICON', 'backend_asset/images/active.png');
 define('INACTIVE_ICON', 'backend_asset/images/inactive.png');
 define('VIEW_ICON', 'backend_asset/images/eye.png');
 define('PASSWORD_ICON', 'backend_asset/images/key.png');
-define('SITE_TITLE','Self Assessment');
-define('COPYRIGHT','Self Assessment &copy; 2017-2018');
-define('ADMIN_EMAIL', 'admin@site.com');
-
+define('SITE_TITLE','Equity Reasearch Panelt');
+define('COPYRIGHT','© Copyright 2017 Equity Research');
+define('ADMIN_EMAIL', 'eqresearchpanel@gmail.com');
+define('LOGO', 'frontend_asset/images/eq.png');
+define('PHONE', '0000000000');
+define('ADDRESS', '380 Shrinagar Extension Indore');
 /* IOS push notification */
 define('APNS_GATEWAY_URL', 'ssl://gateway.push.apple.com:2195');
 define('APNS_CERTIFICATE_PATH', '/third_party/site.certi.pem');

@@ -118,7 +118,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 60,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a target="_blank" href="<?php echo base_url().'buy-now';?>" class="btn btn-warning">Pay Now</a></td>
+                                            <td colspan="2"><a  href="<?php echo base_url().'payment';?>" class="btn btn-warning">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -162,7 +162,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 70,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning"  href="<?php echo base_url().'payment';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -206,7 +206,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 60,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning"  href="<?php echo base_url().'payment';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -250,7 +250,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 70,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning"  href="<?php echo base_url().'payment';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -294,7 +294,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 70,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning"  href="<?php echo base_url().'payment';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -338,7 +338,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 90,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning"  href="<?php echo base_url().'payment';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -382,7 +382,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 70,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning"  href="<?php echo base_url().'payment';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -426,7 +426,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 99,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning"  href="<?php echo base_url().'payment';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -470,7 +470,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 70,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning"  href="<?php echo base_url().'payment';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -514,7 +514,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 120,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning"  href="<?php echo base_url().'payment';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -558,7 +558,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 150,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning"  href="<?php echo base_url().'payment';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
@@ -602,7 +602,7 @@
                                             <td><i aria-hidden="true" class="fa fa-inr"></i> 399,000 /-</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="2"><a class="btn btn-warning" target="_blank" href="<?php echo base_url().'buy-now';?>">Pay Now</a></td>
+                                            <td colspan="2"><a class="btn btn-warning"  href="<?php echo base_url().'payment';?>">Pay Now</a></td>
                                         </tr>
                                     </tbody></table>
                             </li>
