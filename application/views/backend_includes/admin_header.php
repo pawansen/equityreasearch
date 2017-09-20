@@ -71,24 +71,33 @@ z-index : 101;
                                 <img width="80" src="<?php echo base_url().  getConfig('site_logo'); ?>" class="img-responsive img-circle" alt="" />
                             </div>
                         </li>
+                        <li title="Contact" class="<?php echo (strpos($parent , "contact") !== false) ? "active" : "" ?>">
+                            <a href="<?php echo site_url('admin/contact'); ?>"><i class="fa fa-th-large"></i> <span class="nav-label"><?php echo "Contact";?></span></a>
+                        </li>
+                        <li title="Free Trial" class="<?php echo (strpos($parent , "freetrial") !== false) ? "active" : "" ?>">
+                            <a href="<?php echo site_url('admin/free_trial'); ?>"><i class="fa fa-th-large"></i> <span class="nav-label"><?php echo "Free Trial";?></span></a>
+                        </li>
+                        <li title="Payment" class="<?php echo (strpos($parent , "payment") !== false) ? "active" : "" ?>">
+                            <a href="<?php echo site_url('admin/payment'); ?>"><i class="fa fa-th-large"></i> <span class="nav-label"><?php echo "Payment";?></span></a>
+                        </li>
                  
 <!--                        <li title="Dashboard" class="<?php echo (strtolower($this->router->fetch_class()) == "admin") ? "active" : "" ?>">
                             <a href="<?php echo site_url('admin'); ?>"><i class="fa fa-th-large"></i> <span class="nav-label"><?php echo lang('dashboard');?></span></a>
                         </li>-->
                         
                                                 
-                         <li title="Dashboard" class="<?php echo (strpos($parent , "180_tracking") !== false || strpos($parent , "180_reports") !== false || strpos($parent , "daily_tracking") !== false || strpos($parent , "daily_reports") !== false) ? "active" : "" ?>">
+<!--                         <li title="Dashboard" class="<?php echo (strpos($parent , "180_tracking") !== false || strpos($parent , "180_reports") !== false || strpos($parent , "daily_tracking") !== false || strpos($parent , "daily_reports") !== false) ? "active" : "" ?>">
                             <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label"><?php echo lang('dashboard');?></span><span class="fa arrow"></span></a>
-                          <!--   <ul class="nav nav-second-level">
+                             <ul class="nav nav-second-level">
                                 <li class="<?php echo (strpos($parent , "180_tracking") !== false) ? "active" : "" ?>"><a  href="<?php echo site_url('charts/tracking_180'); ?>"><i class="fa fa-bar-chart"></i> 180-Assessment Tracking</a></li>
                                 <li class="<?php echo (strpos($parent , "180_reports") !== false) ? "active" : "" ?>"><a  href="<?php echo site_url('charts/reports_180'); ?>"><i class="fa fa-file-pdf-o"></i> 180-Assessment Reports</a></li>
                                 <li class="<?php echo (strpos($parent , "daily_tracking") !== false) ? "active" : "" ?>"><a  href="<?php echo site_url('charts/daily_tracking'); ?>"><i class="fa fa-bar-chart"></i> Daily-Assessment Tracking</a></li>
                                 <li class="<?php echo (strpos($parent , "daily_reports") !== false) ? "active" : "" ?>"><a  href="<?php echo site_url('charts/daily_reports'); ?>"><i class="fa fa-file-pdf-o"></i> Daily-Assessment Reports</a></li>
-                            </ul> -->
-                        </li>
+                            </ul> 
+                        </li>-->
                         
                         
-                        <li title="Roles" class="<?php echo (strtolower($this->router->fetch_class()) == "roles") ? "active" : "" ?>">
+<!--                        <li title="Roles" class="<?php echo (strtolower($this->router->fetch_class()) == "roles") ? "active" : "" ?>">
                             <a href="<?php echo site_url('roles'); ?>"><i class="fa fa-users"></i> <span class="nav-label"><?php echo lang('roles');?></span></a>
                         </li>
 
@@ -99,11 +108,11 @@ z-index : 101;
                             <ul class="nav nav-second-level">
                                <li class="<?php echo (strpos($parent , "User") !== false) ? "active" : "" ?>"><a  href="<?php echo site_url('users'); ?>"><i class="fa fa-user"></i> <?php echo lang('users');?></a></li>
                             </ul>
-                        </li>
+                        </li>-->
 
-                        <li title="Cms" class="<?php echo (strtolower($this->router->fetch_class()) == "cms") ? "active" : "" ?>">
+<!--                        <li title="Cms" class="<?php echo (strtolower($this->router->fetch_class()) == "cms") ? "active" : "" ?>">
                             <a href="<?php echo site_url('cms'); ?>"><i class="fa fa-pagelines"></i> <span class="nav-label"><?php echo lang('cms');?></span></a>
-                        </li>
+                        </li>-->
 
 <!--                        <li title="Reports" class="<?php echo (strtolower($this->router->fetch_class()) == "reports") ? "active" : "" ?>">
                             <a href="<?php echo site_url('admin'); ?>"><i class="fa fa-bar-chart"></i> <span class="nav-label">Reports</span></a>

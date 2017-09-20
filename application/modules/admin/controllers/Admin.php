@@ -25,241 +25,8 @@ class Admin extends Common_Controller {
                 redirect('admin/login', 'refresh');
             } else {
                 $this->data['title'] = "Dashboard";
-                $option = array('table' => ORGANIZATION,
-                    'select' => 'id,name'
-                );
-                $this->data['organization'] = $this->common_model->customGet($option);
-                //$this->load->admin_render('dashboard', $this->data, 'inner_script');
-                redirect('charts/tracking_180');
+                $this->load->admin_render('dashboard', $this->data, 'inner_script');
             }
-        }
-    }
-
-    public function generateReportDashboard() {
-        $allUsers = array();
-        $organization_id = $this->input->post('organization_id');
-        $sql = "SELECT user.`id` as id, CONCAT(user.`first_name`,' ',user.`last_name`,' (',name,')') as name, ug.organization_id, gr.id as role_id FROM "
-                . "`users` as user INNER JOIN users_groups as ug ON ug.user_id=user.id "
-                . " INNER JOIN groups as gr ON (gr.id=ug.group_id) "
-                . " INNER JOIN user_hierarchy as UH ON (UH.child_user_id=user.id)"
-                . " INNER JOIN user_assessment as UA ON (UA.user_id = user.id)"
-                . " WHERE ug.organization_id  = '" . $organization_id . "' AND gr.id = 5 AND UA.assessment_type=180 GROUP BY user.id"
-                . "";
-        $lowerUsers = $this->common_model->customQuery($sql);
-        if (!empty($lowerUsers)) {
-            $temp = "";
-            foreach ($lowerUsers as $usr) {
-                $temp .= $usr->id . ",";
-            }
-            $temp1 = rtrim($temp, ',');
-            $sql = "SELECT user.`id` as id, CONCAT(user.`first_name`,' ',user.`last_name`,' (',name,')') as name, ug.organization_id, gr.id as role_id FROM "
-                    . "`users` as user INNER JOIN users_groups as ug ON ug.user_id=user.id "
-                    . " INNER JOIN groups as gr ON (gr.id=ug.group_id) "
-                    . " INNER JOIN user_hierarchy as UH ON (UH.user_id=user.id)"
-                    . " WHERE UH.child_user_id IN ($temp1) AND ug.organization_id  = '" . $organization_id . "' GROUP BY user.id "
-                    . "";
-            $lowerUsersAll = $this->common_model->customQuery($sql);
-            if (!empty($lowerUsersAll)) {
-                $temp2 = "";
-                foreach ($lowerUsersAll as $usr) {
-                    $temp2 .= $usr->id . ",";
-                }
-                $temp3 = rtrim($temp2, ',');
-                $sql = "SELECT user.`id` as id, CONCAT(user.`first_name`,' ',user.`last_name`,' (',name,')') as name, ug.organization_id, gr.id as role_id FROM "
-                        . "`users` as user INNER JOIN users_groups as ug ON ug.user_id=user.id "
-                        . " INNER JOIN groups as gr ON (gr.id=ug.group_id) "
-                        . " INNER JOIN user_hierarchy as UH ON (UH.user_id=user.id)"
-                        . " WHERE UH.child_user_id IN ($temp3) AND ug.organization_id  = '" . $organization_id . "' GROUP BY user.id "
-                        . "";
-                $upperUsersAll = $this->common_model->customQuery($sql);
-                if (!empty($upperUsersAll)) {
-                    $allUsers = array_merge($lowerUsers, $lowerUsersAll, $upperUsersAll);
-                } else {
-                    $allUsers = array_merge($lowerUsers, $lowerUsersAll);
-                }
-            } else {
-                $allUsers = $lowerUsers;
-            }
-        }
-
-        $this->data['allUsers'] = $allUsers;
-        $this->data['organization_id'] = $organization_id;
-        $this->load->view('dashboard_report', $this->data);
-    }
-
-    public function categoryAssessmentReport() {
-        $userId = $this->input->post('userId');
-        $roleId = $this->input->post('roleId');
-        $this->data['parent'] = "Dashboard";
-        $this->data['title'] = "Dashboard";
-        if (!empty($userId)) {
-            $categoryAverageBySelf = array();
-            $categoryAverageByLeader = array();
-            $option = array('table' => USER_ASSESSMENT . ' as UA',
-                'select' => 'ACA.id as cat_id,ACA.category_name',
-                'join' => array(USER_ASSESSMENT_QUESTION_SUBMISSION . ' as UAQS' => 'UAQS.user_assessment_id=UA.id',
-                    QUESTIONS . ' as QSA' => 'QSA.id=UAQS.question_id',
-                    ASSESSMENT_CATEGORY . ' as ACA' => 'ACA.id=QSA.category_id'),
-                'where' => array('UA.user_id' => $userId),
-                'group_by' => array('ACA.id')
-            );
-            $assessmentQuestionCategory = $this->common_model->customGet($option);
-            foreach ($assessmentQuestionCategory as $ass_cat) {
-                $sql = "SELECT QAS.category_id,ROUND(AVG(QAP.point),2) as avg_point FROM user_assessment as UA"
-                        . " INNER JOIN assessment_submission as ASB ON (ASB.user_assessment_id=UA.id)"
-                        . " INNER JOIN questions as QAS ON (QAS.id=ASB.question_id)"
-                        . " INNER JOIN questions_option as QAP ON (QAP.id=ASB.select_option_id)"
-                        . " WHERE UA.user_id = $userId AND QAS.category_id = $ass_cat->cat_id AND UA.assessment_type=180";
-
-                $categoryAverageBySelf[$ass_cat->cat_id] = $this->common_model->customQuery($sql, TRUE);
-            }
-            foreach ($assessmentQuestionCategory as $ass_cat) {
-                $sql = "SELECT QAS.category_id,ROUND(AVG(QAP.point),2) as avg_point FROM user_assessment as UA"
-                        . " INNER JOIN user_assessment as UA1 ON (UA1.child_upper_id=UA.id)"
-                        . " INNER JOIN assessment_submission as ASB ON (ASB.user_assessment_id=UA1.id)"
-                        . " INNER JOIN questions as QAS ON (QAS.id=ASB.question_id)"
-                        . " INNER JOIN questions_option as QAP ON (QAP.id=ASB.select_option_id)"
-                        . " WHERE UA.user_id = $userId AND QAS.category_id = $ass_cat->cat_id AND UA.assessment_type=180";
-
-                $categoryAverageByLeader[$ass_cat->cat_id] = $this->common_model->customQuery($sql, TRUE);
-            }
-
-            $selfAvg = array();
-            foreach ($categoryAverageBySelf as $rows) {
-                $selfAvg[] = $rows->avg_point;
-            }
-            $leaderAvg = array();
-            foreach ($categoryAverageByLeader as $row) {
-                $leaderAvg[] = $row->avg_point;
-            }
-            $chartLabel = array();
-            foreach ($assessmentQuestionCategory as $cat) {
-                $chartLabel[] = $cat->category_name;
-            }
-
-            if (count($chartLabel) == 2) {
-                $chartLabel[] = "";
-                $selfAvg[] = null;
-                $leaderAvg[] = null;
-            } elseif (count($chartLabel) == 1) {
-                $chartLabel[] = "";
-                $chartLabel[] = "";
-                $selfAvg[] = null;
-                $selfAvg[] = null;
-                $leaderAvg[] = null;
-                $leaderAvg[] = null;
-            }
-
-
-            if (empty($roleId)) {
-                $this->data['category'] = $assessmentQuestionCategory;
-                $this->data['self'] = $categoryAverageBySelf;
-                $this->data['leader'] = $categoryAverageByLeader;
-                $this->data['userId'] = $userId;
-                if (!empty($assessmentQuestionCategory)) {
-                    $this->load->view('category_chart', $this->data);
-                } else {
-                    echo "";
-                }
-            } else {
-                if (!empty($assessmentQuestionCategory)) {
-                    $response = array('status' => 1, 'label' => $chartLabel, 'self' => $selfAvg, 'leader' => $leaderAvg);
-                } else {
-                    $response = array('status' => 0, 'label' => array(), 'self' => array(), 'leader' => array());
-                }
-                echo json_encode($response);
-            }
-        } else {
-            redirect('admin');
-        }
-    }
-
-    public function caregoryStatementChart() {
-        $userId = $this->input->post('userId');
-        $catId = $this->input->post('catId');
-        $statement = $this->input->post('statement');
-        $this->data['parent'] = "Dashboard";
-        $this->data['title'] = "Dashboard";
-
-        $option = array('table' => USER_ASSESSMENT . ' as UA',
-            'select' => 'QSA.id as que_id,QSA.question,QSA.title,UAQS.select_option_id,QAP.point',
-            'join' => array(USER_ASSESSMENT_QUESTION_SUBMISSION . ' as UAQS' => 'UAQS.user_assessment_id=UA.id',
-                QUESTIONS . ' as QSA' => 'QSA.id=UAQS.question_id',
-                'questions_option as QAP' => 'QAP.id=UAQS.select_option_id'),
-            'where' => array('UA.user_id' => $userId, 'QSA.category_id' => $catId, 'UA.assessment_type' => 180)
-        );
-        $assessmentStatementSelf = $this->common_model->customGet($option);
-        if (!empty($assessmentStatementSelf)) {
-            $assessmentStatementLeader = array();
-            foreach ($assessmentStatementSelf as $assessment) {
-                $sql = "SELECT QAS.id as que_id,QAS.question,QAS.title,ASB.select_option_id,ROUND(AVG(QAP.point),2) as avg_point FROM user_assessment as UA"
-                        . " INNER JOIN user_assessment as UA1 ON (UA1.child_upper_id=UA.id)"
-                        . " INNER JOIN assessment_submission as ASB ON (ASB.user_assessment_id=UA1.id)"
-                        . " INNER JOIN questions as QAS ON (QAS.id=ASB.question_id)"
-                        . " INNER JOIN questions_option as QAP ON (QAP.id=ASB.select_option_id)"
-                        . " WHERE UA.user_id = $userId AND QAS.category_id = $catId AND UA.assessment_type=180 AND QAS.id = $assessment->que_id";
-
-                $assessmentStatementLeader[] = $this->common_model->customQuery($sql, TRUE);
-            }
-            $leaderPoint = array();
-            $leaderPointTable = array();
-            if (!empty($assessmentStatementLeader)) {
-                foreach ($assessmentStatementLeader as $leader) {
-                    $leaderPoint[] = $leader->avg_point;
-                    $leaderPointTable[] = $leader->avg_point;
-                }
-            }
-            $labels = array();
-            $labelsTable = array();
-            foreach ($assessmentStatementSelf as $rows) {
-                $labels[] = $rows->title;
-                $labelsTable[] = $rows->title;
-            }
-
-            $selfPoints = array();
-            $selfPointsTable = array();
-            foreach ($assessmentStatementSelf as $rows) {
-                $selfPoints[] = $rows->point . '0';
-                $selfPointsTable[] = $rows->point . '0';
-            }
-
-            if (count($labels) == 1) {
-                $labels[1] = $labels[0];
-                $labels[0] = "";
-                $labels[2] = "";
-                $selfPoints[1] = $selfPoints[0];
-                $selfPoints[0] = null;
-                $selfPoints[2] = null;
-                $leaderPoint[1] = $leaderPoint[0];
-                $leaderPoint[0] = null;
-                $leaderPoint[2] = null;
-            }
-            $option = array('table' => 'category',
-                'select' => 'id,category_name',
-                'where' => array('id' => $catId),
-                'single' => true
-            );
-            $category_name = $this->common_model->customGet($option);
-
-            if ($statement == 1) {
-                $this->data['statement'] = $labelsTable;
-                $this->data['self'] = $selfPointsTable;
-                $this->data['leader'] = $leaderPointTable;
-                $this->data['category_name'] = $category_name->category_name;
-                if (!empty($assessmentStatementSelf)) {
-                    $this->load->view('category_statement_chart', $this->data);
-                } else {
-                    echo "";
-                }
-            } else {
-                $response = array('status' => 1, 'labels' => $labels, 'self' => $selfPoints, 'leader' => $leaderPoint, 'category_name' => $category_name->category_name);
-                echo json_encode($response);
-                exit;
-            }
-        } else {
-            $response = array('status' => 0, 'label' => array(), 'self' => array(), 'leader' => array());
-            echo json_encode($response);
-            exit;
         }
     }
 
@@ -799,5 +566,33 @@ class Admin extends Common_Controller {
             return FALSE;
         }
     }
+
+    public function contact() {
+        $this->data['parent'] = "contact";
+        $this->data['title'] = "contact";
+        $option = array('table' => "contact");
+
+        $this->data['list'] = $this->common_model->customGet($option);
+        $this->load->admin_render('contact', $this->data, 'inner_script');
+    }
+    
+    public function free_trial() {
+        $this->data['parent'] = "freetrial";
+        $this->data['title'] = "Free trial";
+        $option = array('table' => "free_trial");
+
+        $this->data['list'] = $this->common_model->customGet($option);
+        $this->load->admin_render('free_trial', $this->data, 'inner_script');
+    }
+    
+    public function payment() {
+        $this->data['parent'] = "payment";
+        $this->data['title'] = "Payment";
+        $option = array('table' => "payment");
+
+        $this->data['list'] = $this->common_model->customGet($option);
+        $this->load->admin_render('payment', $this->data, 'inner_script');
+    }
+
 
 }
