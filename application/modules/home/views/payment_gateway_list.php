@@ -33,7 +33,7 @@
               <div class="col-md-12">
                   <div class="col-md-3"><img src="<?php echo base_url(); ?>frontend_asset/images/payumoney_logo.png" class="img-responsive"></div>
                   <div class="col-md-6"><h4>CLICK HERE TO GO ONLINE PAYMENT</h4></div>
-                  <div class="col-md-3"><a href="<?php echo base_url().'buy-now';?>" class="btn btn-warning btn-lg">Pay Now</a></div>
+                  <div class="col-md-3"><a href="<?php echo base_url().'buy-now';?>" class="btn_commen_pricing green_bg">Pay Now</a></div>
               </div>
 
             </div>

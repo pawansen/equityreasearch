@@ -64,7 +64,7 @@ h1,h2,h3,h4,h5,h6{
 ******************************************************************************/
 .header_main {
     background: #fff none repeat scroll 0 0;
-    border-top: 4px solid #eb772a;
+    border-top: 4px solid #02836f;
     height: 104px;
     position: relative;
     z-index: 99;
@@ -112,13 +112,13 @@ h1,h2,h3,h4,h5,h6{
   border-bottom: 3px solid transparent;
 }
 .header_main .navbar-nav > li > a:hover {
-    color: #eb772a;
+    color: #02836f;
 }
 .header_main .navbar-default .navbar-nav > .active > a, .header_main .navbar-default .navbar-nav > .active > a:focus, .header_main .navbar-default .navbar-nav > .active > a:hover, .header_main .navbar-default .navbar-nav > .open > a, .header_main .navbar-default .navbar-nav > .open > a:focus, .header_main .navbar-default .navbar-nav > .open > a:hover {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-    border-bottom: 3px solid #eb772a;
-    color: #eb772a;
-} 
+    border-bottom: 3px solid #02836f;
+    color: #02836f;
+}
 .header_main  .dropdown-menu{border: none;}
 .header_main .navbar-right{margin-top: 40px;}
 .header_contact {
@@ -251,15 +251,37 @@ background: none !important;
   margin: 0px 6px;
   border: 1px solid transparent;
 }
+
+.btn_commen_pricing {
+    background: #00b63e none repeat scroll 0 0;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 46px;
+    margin: 0 3px;
+    padding: 14px 13px;
+    text-align: center;
+}
+.green_text{
+  color: #289783;
+}
 .green_bg{
   background: #00b63e;
 }
-.blue_bg{
-  background: #003365;
-}
+.blue_bg {
+    background: #289783 none repeat scroll 0 0;
+} 
 .btn_commen:hover{
-  color: #333;
-  border: 1px solid #003365;
+  color: #289783;
+  border: 1px solid #289783;
+  background: #fff;
+}
+.btn_commen_pricing:hover{
+  color: #289783;
+  border: 1px solid #289783;
   background: #fff;
 }
 .home_slider .slick-prev , .home_slider .slick-next{
@@ -338,6 +360,7 @@ background: none !important;
   float: left;
   background-color: rgb( 255, 255, 255 );
   box-shadow: 0px 3px 7px 0px rgba( 0, 0, 0 , .5);
+  margin-bottom: 10px;
   
 }
 .block4_list li p{
@@ -411,7 +434,7 @@ background: none !important;
   color: rgba(204,213,222 , .6);
 }
 .ftr_block li a:hover{
-  color: #00b63e;
+  color: #ffffff;
 }
 .ftr_block .ftr_address li{
   line-height: 24px;
@@ -883,9 +906,9 @@ background: none !important;
   border-radius: 0px;
 }
 .green_bg {
-    background: #eb772a none repeat scroll 0 0;
+    background: #02836f none repeat scroll 0 0;
     font-weight: 400;
-}
+} 
 input.form-control::-webkit-input-placeholder{color: #494949;}
 input.form-control::-moz-placeholder{color: #494949;opacity: 1;}
 input.form-control:-ms-input-placeholder{color: #494949;}

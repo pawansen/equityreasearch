@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends Common_Controller {
 
-    public $data = "";
+    public $data = array();
 
     function __construct() {
         parent::__construct();
@@ -20,13 +20,13 @@ class Admin extends Common_Controller {
             //$this->session->set_flashdata('message', 'Your session has been expired');
             redirect('admin/login', 'refresh');
         } else {
-            if (!$this->ion_auth->is_admin()) {
-                $this->session->set_flashdata('message', 'You are not authorised to access administration');
-                redirect('admin/login', 'refresh');
-            } else {
+            //if (!$this->ion_auth->is_admin()) {
+            //    $this->session->set_flashdata('message', 'You are not authorised to access administration');
+            //    redirect('admin/login', 'refresh');
+           // } else {
                 $this->data['title'] = "Dashboard";
                 $this->load->admin_render('dashboard', $this->data, 'inner_script');
-            }
+            //}
         }
     }
 
@@ -62,9 +62,8 @@ class Admin extends Common_Controller {
 
                 if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember)) {
 
-                    $this->session->set_flashdata('message', $this->ion_auth->messages());
-
-                    redirect('admin', 'refresh');
+                    $this->session->set_flashdata('message', $this->ion_auth->messages());	
+                    redirect('admin/payment', 'refresh');
                 } else {
                     $this->session->set_flashdata('message', $this->ion_auth->errors());
                     redirect('admin/login', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries

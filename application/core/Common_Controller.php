@@ -6,7 +6,7 @@ require APPPATH . "third_party/MX/Controller.php";
 
 class Common_Controller extends MX_Controller {
 
-    public $filedata = "";
+    public $filedata = array();
 
     function __construct() {
         parent::__construct();

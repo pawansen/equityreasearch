@@ -168,13 +168,13 @@ if (empty($posted['hash']) && sizeof($posted) > 0) {
                                 </tr>
                             </table>
                                   <div class='form-row'>
-              <div class='form-group card required'>
-                  <div class="col-md-offset-9">
-                      <?php if (!$hash) { ?>
-                                            <img src="<?php echo base_url(); ?>frontend_asset/images/payumoney_logo.png" class="img-responsive">    <br>   <input class="btn btn-warning btn-lg" type="submit" value="Pay Now" />
-                  <?php } ?></div>
-              </div>
-            </div>
+                                <div class='form-group card required'>
+                                    <div class="col-md-offset-9">
+                                        <?php if (!$hash) { ?>
+                                      <img src="<?php echo base_url(); ?>frontend_asset/images/payumoney_logo.png" class="img-responsive">    <br>   <input class="btn_commen_pricing green_bg" type="submit" value="Pay Now" />
+                                    <?php } ?></div>
+                                </div>
+                              </div>
                         </form>
                                   </div>           
                               </div>   
